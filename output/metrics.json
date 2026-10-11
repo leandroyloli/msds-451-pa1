@@ -1,0 +1,434 @@
+{
+  "symbol": "GLD",
+  "start": "2006-01-01",
+  "end": "2026-10-11",
+  "n_prices": 5225,
+  "windows": {
+    "dev_start": "2006-01-09",
+    "dev_end": "2023-12-14",
+    "n_dev": 4515,
+    "gap_n": 10,
+    "gap_start": "2023-12-15",
+    "gap_end": "2023-12-29",
+    "test_start": "2024-01-02",
+    "test_end": "2026-10-09",
+    "n_test": 696,
+    "n_rows": 5221
+  },
+  "balance_dev": {
+    "n0": 2147,
+    "n1": 2368,
+    "share1": 0.5244739756367663
+  },
+  "balance_test": {
+    "n0": 300,
+    "n1": 396,
+    "share1": 0.5689655172413793
+  },
+  "adf": {
+    "Close": {
+      "adf_stat": -1.564532953724973,
+      "pvalue": 0.5013811016804133
+    },
+    "LogReturn": {
+      "adf_stat": -67.99466811883572,
+      "pvalue": 0.0
+    }
+  },
+  "baselines": {
+    "majority_class": 1,
+    "majority_accuracy": 0.5689655172413793,
+    "persist_accuracy": 0.4583333333333333,
+    "persist_auc": 0.448030303030303
+  },
+  "search": {
+    "n_iter": 30,
+    "scoring": "roc_auc",
+    "cv": "TimeSeriesSplit n_splits=5 gap=10",
+    "random_state": 2026
+  },
+  "price": {
+    "features": [
+      "CloseLag1",
+      "CloseLag2",
+      "CloseLag3",
+      "HMLLag1",
+      "HMLLag2",
+      "HMLLag3",
+      "OMCLag1",
+      "OMCLag2",
+      "OMCLag3",
+      "VolumeLag1",
+      "VolumeLag2",
+      "VolumeLag3",
+      "CloseEMA2",
+      "CloseEMA4",
+      "CloseEMA8"
+    ],
+    "n_subsets": 32767,
+    "best_aic": 6248.208067106627,
+    "top10": [
+      {
+        "features": "0 2 3 10",
+        "names": [
+          "CloseLag1",
+          "CloseLag3",
+          "HMLLag1",
+          "VolumeLag2"
+        ],
+        "aic": 6248.208067106627,
+        "k": 4
+      },
+      {
+        "features": "0 2 3",
+        "names": [
+          "CloseLag1",
+          "CloseLag3",
+          "HMLLag1"
+        ],
+        "aic": 6248.628942095578,
+        "k": 3
+      },
+      {
+        "features": "0 2",
+        "names": [
+          "CloseLag1",
+          "CloseLag3"
+        ],
+        "aic": 6248.900938517057,
+        "k": 2
+      },
+      {
+        "features": "0 2 3 11",
+        "names": [
+          "CloseLag1",
+          "CloseLag3",
+          "HMLLag1",
+          "VolumeLag3"
+        ],
+        "aic": 6248.975614577559,
+        "k": 4
+      },
+      {
+        "features": "3 10",
+        "names": [
+          "HMLLag1",
+          "VolumeLag2"
+        ],
+        "aic": 6249.49913038759,
+        "k": 2
+      },
+      {
+        "features": "3 6 10",
+        "names": [
+          "HMLLag1",
+          "OMCLag1",
+          "VolumeLag2"
+        ],
+        "aic": 6249.590544737268,
+        "k": 3
+      },
+      {
+        "features": "0 2 3 9",
+        "names": [
+          "CloseLag1",
+          "CloseLag3",
+          "HMLLag1",
+          "VolumeLag1"
+        ],
+        "aic": 6249.679642733072,
+        "k": 4
+      },
+      {
+        "features": "0 3 10 13",
+        "names": [
+          "CloseLag1",
+          "HMLLag1",
+          "VolumeLag2",
+          "CloseEMA4"
+        ],
+        "aic": 6249.73373716319,
+        "k": 4
+      },
+      {
+        "features": "0 1 3 10",
+        "names": [
+          "CloseLag1",
+          "CloseLag2",
+          "HMLLag1",
+          "VolumeLag2"
+        ],
+        "aic": 6249.7798907876,
+        "k": 4
+      },
+      {
+        "features": "0 2 3 4 10",
+        "names": [
+          "CloseLag1",
+          "CloseLag3",
+          "HMLLag1",
+          "HMLLag2",
+          "VolumeLag2"
+        ],
+        "aic": 6249.808633582079,
+        "k": 5
+      }
+    ],
+    "frequency": {
+      "CloseLag1": 8,
+      "CloseLag2": 1,
+      "CloseLag3": 6,
+      "HMLLag1": 9,
+      "HMLLag2": 1,
+      "HMLLag3": 0,
+      "OMCLag1": 1,
+      "OMCLag2": 0,
+      "OMCLag3": 0,
+      "VolumeLag1": 1,
+      "VolumeLag2": 6,
+      "VolumeLag3": 1,
+      "CloseEMA2": 0,
+      "CloseEMA4": 1,
+      "CloseEMA8": 0
+    },
+    "selected": [
+      "CloseLag1",
+      "CloseLag3",
+      "HMLLag1",
+      "VolumeLag2"
+    ],
+    "selected_index": [
+      0,
+      2,
+      3,
+      10
+    ],
+    "baseline_cv_accuracy_mean": 0.5047872340425532,
+    "baseline_cv_accuracy_std": 0.011641525866084718,
+    "baseline_cv_auc_mean": 0.5026540770675594,
+    "baseline_cv_auc_std": 0.019556817428849734,
+    "best_params": {
+      "learning_rate": 0.06202866234335063,
+      "max_depth": 2,
+      "min_child_weight": 6,
+      "n_estimators": 138,
+      "subsample": 0.797638954872153
+    },
+    "best_cv_auc": 0.5104684173890879,
+    "development_insample": {
+      "accuracy": 0.5765227021040975,
+      "auc": 0.6158463569531338,
+      "confusion": [
+        [
+          650,
+          1497
+        ],
+        [
+          415,
+          1953
+        ]
+      ],
+      "report": "                 precision    recall  f1-score   support\n\nnegative return      0.610     0.303     0.405      2147\npositive return      0.566     0.825     0.671      2368\n\n       accuracy                          0.577      4515\n      macro avg      0.588     0.564     0.538      4515\n   weighted avg      0.587     0.577     0.545      4515\n"
+    },
+    "holdout": {
+      "accuracy": 0.4324712643678161,
+      "auc": 0.5319570707070707,
+      "confusion": [
+        [
+          299,
+          1
+        ],
+        [
+          394,
+          2
+        ]
+      ],
+      "report": "                 precision    recall  f1-score   support\n\nnegative return      0.431     0.997     0.602       300\npositive return      0.667     0.005     0.010       396\n\n       accuracy                          0.432       696\n      macro avg      0.549     0.501     0.306       696\n   weighted avg      0.565     0.432     0.265       696\n"
+    },
+    "mean_proba_dev": 0.5249444246292114,
+    "mean_proba_holdout": 0.3642065227031708
+  },
+  "stationary": {
+    "features": [
+      "RetLag1",
+      "RetLag2",
+      "RetLag3",
+      "RelHMLLag1",
+      "RelHMLLag2",
+      "RelHMLLag3",
+      "RelOMCLag1",
+      "RelOMCLag2",
+      "RelOMCLag3",
+      "LogVolChgLag1",
+      "LogVolChgLag2",
+      "LogVolChgLag3",
+      "RetEMA2",
+      "RetEMA4",
+      "RetEMA8"
+    ],
+    "n_subsets": 32767,
+    "best_aic": 6246.338331165821,
+    "top10": [
+      {
+        "features": "3 12",
+        "names": [
+          "RelHMLLag1",
+          "RetEMA2"
+        ],
+        "aic": 6246.338331165821,
+        "k": 2
+      },
+      {
+        "features": "12",
+        "names": [
+          "RetEMA2"
+        ],
+        "aic": 6246.523597979719,
+        "k": 1
+      },
+      {
+        "features": "9 12",
+        "names": [
+          "LogVolChgLag1",
+          "RetEMA2"
+        ],
+        "aic": 6246.910091096597,
+        "k": 2
+      },
+      {
+        "features": "3 4 12",
+        "names": [
+          "RelHMLLag1",
+          "RelHMLLag2",
+          "RetEMA2"
+        ],
+        "aic": 6247.060033400476,
+        "k": 3
+      },
+      {
+        "features": "3 13",
+        "names": [
+          "RelHMLLag1",
+          "RetEMA4"
+        ],
+        "aic": 6247.145193501083,
+        "k": 2
+      },
+      {
+        "features": "13",
+        "names": [
+          "RetEMA4"
+        ],
+        "aic": 6247.199679363454,
+        "k": 1
+      },
+      {
+        "features": "3 9 12",
+        "names": [
+          "RelHMLLag1",
+          "LogVolChgLag1",
+          "RetEMA2"
+        ],
+        "aic": 6247.609183996844,
+        "k": 3
+      },
+      {
+        "features": "3 11 12",
+        "names": [
+          "RelHMLLag1",
+          "LogVolChgLag3",
+          "RetEMA2"
+        ],
+        "aic": 6247.651822568541,
+        "k": 3
+      },
+      {
+        "features": "9 13",
+        "names": [
+          "LogVolChgLag1",
+          "RetEMA4"
+        ],
+        "aic": 6247.686424664044,
+        "k": 2
+      },
+      {
+        "features": "11 12",
+        "names": [
+          "LogVolChgLag3",
+          "RetEMA2"
+        ],
+        "aic": 6247.85101259274,
+        "k": 2
+      }
+    ],
+    "frequency": {
+      "RetLag1": 0,
+      "RetLag2": 0,
+      "RetLag3": 0,
+      "RelHMLLag1": 5,
+      "RelHMLLag2": 1,
+      "RelHMLLag3": 0,
+      "RelOMCLag1": 0,
+      "RelOMCLag2": 0,
+      "RelOMCLag3": 0,
+      "LogVolChgLag1": 3,
+      "LogVolChgLag2": 0,
+      "LogVolChgLag3": 2,
+      "RetEMA2": 7,
+      "RetEMA4": 3,
+      "RetEMA8": 0
+    },
+    "selected": [
+      "RelHMLLag1",
+      "RetEMA2"
+    ],
+    "selected_index": [
+      3,
+      12
+    ],
+    "baseline_cv_accuracy_mean": 0.5087765957446809,
+    "baseline_cv_accuracy_std": 0.015837313756339805,
+    "baseline_cv_auc_mean": 0.5034470850240321,
+    "baseline_cv_auc_std": 0.011640463013452021,
+    "best_params": {
+      "learning_rate": 0.01333721763087621,
+      "max_depth": 4,
+      "min_child_weight": 4,
+      "n_estimators": 296,
+      "subsample": 0.8414601860914257
+    },
+    "best_cv_auc": 0.5133633479641769,
+    "development_insample": {
+      "accuracy": 0.6035437430786268,
+      "auc": 0.661714196584801,
+      "confusion": [
+        [
+          672,
+          1475
+        ],
+        [
+          315,
+          2053
+        ]
+      ],
+      "report": "                 precision    recall  f1-score   support\n\nnegative return      0.681     0.313     0.429      2147\npositive return      0.582     0.867     0.696      2368\n\n       accuracy                          0.604      4515\n      macro avg      0.631     0.590     0.563      4515\n   weighted avg      0.629     0.604     0.569      4515\n"
+    },
+    "holdout": {
+      "accuracy": 0.5517241379310345,
+      "auc": 0.5012584175084175,
+      "confusion": [
+        [
+          74,
+          226
+        ],
+        [
+          86,
+          310
+        ]
+      ],
+      "report": "                 precision    recall  f1-score   support\n\nnegative return      0.463     0.247     0.322       300\npositive return      0.578     0.783     0.665       396\n\n       accuracy                          0.552       696\n      macro avg      0.520     0.515     0.493       696\n   weighted avg      0.528     0.552     0.517       696\n"
+    },
+    "mean_proba_dev": 0.5245093107223511,
+    "mean_proba_holdout": 0.5260477662086487
+  }
+}
